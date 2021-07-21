@@ -1,0 +1,17 @@
+header {
+    justify-content: space-between !important;
+
+    background: var(--clr-brown);
+    
+    height: 5vh;
+    padding: 1.5em;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-link {
+    padding: 0.25em;
+    margin: 0.5em;
+}

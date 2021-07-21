@@ -1,0 +1,10 @@
+footer {
+    background: var(--clr-brown);
+
+    margin-top: auto;
+    padding: 1em;
+
+    text-align: center;
+
+    z-index: 1000;
+}

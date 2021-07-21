@@ -1,0 +1,55 @@
+/* This CSS is responsible for both the Login & Register screens */
+
+#login-background {
+    background-image: url("../../images/login-background.jpg");
+}
+
+#register-background {
+    background-image: url("../../images/register-background.png");
+}
+
+.transparent-background {
+    background: var(--clr-brown);
+    opacity: 0.9;
+
+    width: 100%;
+    height: 100%;
+}
+
+.user-access-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* transition: all 500ms linear; NOTE: Potential firefox issues */
+}
+
+.user-access-form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+}
+
+@media screen and (min-width: 992px) {
+    .user-access-container {
+        width: 55%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .user-access-container {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .user-access-container {
+        width: 35%;
+    }
+}

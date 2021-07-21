@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&family=Rowdies:wght@300;400&display=swap');
+
+:root {
+    /* Primary Colors */
+    --clr-brown: #402E32;
+    --clr-kabul: #5F4741;
+    --clr-spicy-mix: #945F45;
+    --clr-white: #EEEEEE;
+
+    /* Secondary Colors */
+    --clr-strikemaster: #9C668C;
+    --clr-faded-jade: #4C8076;
+    --clr-yellow: #e6e665;
+    --clr-fog: #DEC6FF;
+    --clr-dull-lavender: #A591E9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    background: var(--clr-kabul);
+}
+
+#root {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    padding: 0;
+    color: var(--clr-white);
+}
+
+.list-group-item {
+    background: var(--clr-brown);
+}
+
+.table {
+    background: var(--clr-brown);
+    color: var(--clr-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+    color: var(--clr-white);
+}
+
+h1 {
+    font-family: "Rowdies";
+    font-size: clamp(1.50rem, 4vw, 1.75rem);
+    font-weight: 400;
+}
+
+h2 {
+    font-family: "Poppins";
+    font-size: clamp(1.30rem, 4vw, 1.45rem);
+}
+
+h3 {
+    font-family: "Rowdies";
+    font-size: clamp(1.30rem, 4vw, 1.45rem);
+    font-weight: 400;
+}
+
+h4 {
+    font-family: "Rowdies";
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    font-weight: 300;
+}
+
+h5 {
+    font-family: "Poppins";
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    font-weight: 300;
+}
+
+p {
+    font-family: "Poppins";
+    font-size: clamp(0.90rem, 4vw, 1rem);
+}
+
+.bold {
+    font-weight: 500;
+}
+
+a {
+    display: inline-block;
+    color: var(--clr-white);
+
+    font-size: clamp(1rem, 4vw, 1.10rem);
+    text-decoration: none;
+}
+
+/* Universal Classes (ex. Flexbox) & CSS Based Components (Ex. Button) */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.btn {
+    background: var(--clr-spicy-mix);
+    color: var(--clr-white);
+
+    border-radius: .25em;
+    border: none;
+
+    padding: .5em 1em;
+
+    text-transform: capitalize;
+    font-family: "Poppins";
+    font-size: clamp(.75rem, 4vw, .90rem);
+}
+
+.btn:hover,
+.btn-lg:hover,
+.btn:focus,
+.btn-lg:focus {
+    background: var(--clr-faded-jade);
+    color: var(--clr-white);
+}
