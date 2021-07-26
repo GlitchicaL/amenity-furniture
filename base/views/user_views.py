@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from django.conf import settings
 
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
@@ -47,6 +48,11 @@ def getUser(request):
 
 @api_view(['POST'])
 def createUser(request):
+    # Preview mode safeguard
+    if (settings.PREVIEW_MODE):
+        message = {'message': 'Cannot create user in preview mode'}
+        return Response(message, status=status.HTTP_400_BAD_REQUEST)
+
     data = request.data
 
     try:

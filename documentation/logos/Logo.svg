@@ -1,0 +1,8 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M88 156C88 144.954 96.9543 136 108 136H148C159.046 136 168 144.954 168 156V170L167.821 170.5L145 147.5H127.5H110.5L88 170.5V170V156Z" fill="#EEEEEE"/>
+<path d="M107 111C107 102.716 113.716 96 122 96H134C142.284 96 149 102.716 149 111V132H107V111Z" fill="#EEEEEE"/>
+<line x1="157" y1="133" x2="98" y2="133" stroke="#402E32" stroke-width="10"/>
+<line x1="138.532" y1="95.8869" x2="172.341" y2="168.392" stroke="#402E32" stroke-width="10"/>
+<line x1="83.4685" y1="168.392" x2="117.278" y2="95.8869" stroke="#402E32" stroke-width="10"/>
+<path d="M113 116L128.5 85L143 116" stroke="#402E32" stroke-width="10"/>
+</svg>

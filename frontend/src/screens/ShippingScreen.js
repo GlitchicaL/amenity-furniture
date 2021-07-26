@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { saveShippingAddress } from '../actions/cartActions';
 
 const ShippingScreen = ({ history }) => {
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
+
     const cart = useSelector(state => state.cart)
-    const { shippingAddress } = cart
+    const { shippingAddress, cartItems } = cart
 
     const dispatch = useDispatch()
 
@@ -14,6 +17,14 @@ const ShippingScreen = ({ history }) => {
     const [city, setCity] = useState(shippingAddress.city)
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
     const [country, setCountry] = useState(shippingAddress.country)
+
+    useEffect(() => {
+        if (!userInfo) {
+            history.push('/login?redirect=shipping')
+        } else if (cartItems.length === 0) {
+            history.push('/')
+        }
+    }, [history, userInfo, cartItems])
 
     const shippingHandler = (e) => {
         e.preventDefault()

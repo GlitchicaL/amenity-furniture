@@ -41,7 +41,7 @@ const AccountScreen = ({ history }) => {
             }
 
         } else {
-            history.push('/login')
+            history.push('/login?redirect=account')
         }
 
     }, [history, userInfo, success, dispatch])

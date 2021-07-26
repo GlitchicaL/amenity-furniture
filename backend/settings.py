@@ -194,3 +194,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost',
     'https://glitchical-amenity-furniture.herokuapp.com'
 ]
+
+# CUSTOM CONFIGURATIONS
+PREVIEW_MODE = (os.environ.get('PREVIEW_MODE') == 'True')
