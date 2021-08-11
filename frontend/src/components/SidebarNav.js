@@ -39,6 +39,19 @@ const SidebarNav = () => {
 
                 <Link to='/products' className="my-3 btn d-block"><i className="mx-2 fas fa-chair"></i>Products</Link>
             </div>
+
+            <hr />
+
+            {userInfo && userInfo.isAdmin ? (
+                <div>
+                    <p className='flex'>Admin Panel</p>
+                    <Link to='/admin/userlist' className="my-3 btn d-block">View Users</Link>
+                    <Link to='/admin/productlist' className="my-3 btn d-block">Edit Products</Link>
+                    <Link to='/admin/orderlist' className="my-3 btn d-block">View Orders</Link>
+                </div>
+            ) : (
+                <span></span>
+            )}
         </nav>
     );
 }

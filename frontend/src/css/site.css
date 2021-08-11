@@ -13,6 +13,7 @@
     --clr-yellow: #e6e665;
     --clr-fog: #DEC6FF;
     --clr-dull-lavender: #A591E9;
+    --clr-red: #B61629;
 }
 
 * {
@@ -45,6 +46,15 @@ html, body {
 .table {
     background: var(--clr-brown);
     color: var(--clr-white);
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Colors */
+.red {
+    background-color: var(--clr-red) !important;
 }
 
 /* Typography */

@@ -11,4 +11,8 @@ urlpatterns = [
     path('update/', views.updateUser, name="users-update"),
 
     path('', views.getUsers, name="users"),
+
+    path('<str:pk>/', views.getUserById, name='user'),
+    path('update/<str:pk>/', views.updateUserById, name='admin-user-update'),
+    path('delete/<str:pk>/', views.deleteUser, name='admin-user-delete'),
 ]
