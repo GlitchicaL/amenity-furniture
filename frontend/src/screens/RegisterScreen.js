@@ -10,7 +10,7 @@ const RegisterScreen = ({ history }) => {
     const { error } = userRegister
 
     return (
-        <Container fluid>
+        <Container fluid id="register-background">
 
             <div className="user-access-container">
                 <div className="transparent-background"></div>

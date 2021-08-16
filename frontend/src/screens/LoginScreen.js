@@ -10,7 +10,7 @@ const LoginScreen = ({ location, history }) => {
     const { error } = userLogin
 
     return (
-        <Container fluid>
+        <Container fluid id='login-background'>
 
             <div className="user-access-container">
                 <div className="transparent-background"></div>

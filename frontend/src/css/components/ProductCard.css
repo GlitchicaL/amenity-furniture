@@ -4,11 +4,17 @@
 
 .product-card {
     background: var(--clr-brown) !important;
+    cursor: pointer;
 
     max-width: 250px;
     height: 100%;
 
     text-align: center;
+    transition: transform 200ms ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
 }
 
 .product-img {

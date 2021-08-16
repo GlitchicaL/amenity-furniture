@@ -5,7 +5,7 @@ const Rating = ({ value, reviews }) => {
     const color = "#E6E665";
 
     return (
-        <div className="flex rating">
+        <div className="flex rating my-3">
             <span className="star">
                 <i style={{ color }} className={
                     value >= 1
@@ -66,7 +66,7 @@ const Rating = ({ value, reviews }) => {
                 </i>
             </span>
 
-            <p style={{ marginLeft: '0.25em' }}>{reviews && reviews}</p>
+            <p style={{ margin: '0 0.25em' }}>{reviews && reviews}</p>
         </div>
     );
 }

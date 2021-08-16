@@ -53,13 +53,19 @@ html, body {
 }
 
 /* Colors */
+.white {
+    background-color: var(--clr-white) !important;
+}
+
 .red {
     background-color: var(--clr-red) !important;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     color: var(--clr-white);
+    text-transform: unset;
+    letter-spacing: normal;
 }
 
 h1 {
@@ -108,6 +114,11 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: var(--clr-white);
+    text-decoration: none;
+}
+
 /* Universal Classes (ex. Flexbox) & CSS Based Components (Ex. Button) */
 .flex {
     display: flex;
@@ -145,5 +156,10 @@ a {
 .btn:focus,
 .btn-lg:focus {
     background: var(--clr-faded-jade);
+    color: var(--clr-white);
+}
+
+/* Fontawesome Icons */
+.fas {
     color: var(--clr-white);
 }

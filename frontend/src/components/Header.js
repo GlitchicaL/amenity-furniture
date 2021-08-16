@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 /* Import CSS */
 import "../css/components/Header.css";
 
-const Header = ({ toggleNav }) => {
-
+const Header = ({ toggleNav, icon }) => {
     return (
         <header className="flex">
             <Link className='text-decoration-none' to='/'><h4 className='m-0'>Amenity Furniture</h4></Link>
@@ -16,7 +16,7 @@ const Header = ({ toggleNav }) => {
                     <a href="/" className="header-link"><i className="fas fa-user"></i>Login</a>
                 </div>
 
-                <i className="fas fa-bars" style={{ cursor: 'pointer' }} onClick={toggleNav}></i>
+                <i className={`fas fa-${icon}`} style={{ cursor: 'pointer' }} onClick={toggleNav}></i>
             </div>
 
         </header >

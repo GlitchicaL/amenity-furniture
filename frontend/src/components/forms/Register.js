@@ -32,7 +32,7 @@ const Register = ({ history }) => {
 
     return (
         <Form className='p-3' onSubmit={registerHandler}>
-            <Form.Group>
+            <Form.Group className='mb-2'>
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                     type="text"
@@ -42,7 +42,7 @@ const Register = ({ history }) => {
                 />
             </Form.Group>
 
-            <Form.Group>
+            <Form.Group className='mb-2'>
                 <Form.Label>Create Password</Form.Label>
                 <Form.Control
                     type="password"
@@ -62,7 +62,7 @@ const Register = ({ history }) => {
                 />
             </Form.Group>
 
-            <Button className='d-block mx-auto' type='submit'>Register</Button>
+            <Button className='d-block mt-4 mx-auto' type='submit'>Register</Button>
         </Form>
     );
 }

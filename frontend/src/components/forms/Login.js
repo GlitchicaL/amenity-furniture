@@ -30,8 +30,8 @@ const Login = ({ location, history }) => {
 
     return (
         <Form className='p-3' onSubmit={loginHandler}>
-            <Form.Group>
-                <Form.Label>Email</Form.Label>
+            <Form.Group className='mb-2'>
+                <Form.Label className='mb-2'>Email</Form.Label>
                 <Form.Control
                     type="text"
                     placeholder="Email"
@@ -41,7 +41,7 @@ const Login = ({ location, history }) => {
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Password</Form.Label>
+                <Form.Label className='my-2'>Password</Form.Label>
                 <Form.Control
                     type="password"
                     placeholder="Password"
@@ -50,7 +50,7 @@ const Login = ({ location, history }) => {
                 />
             </Form.Group>
 
-            <Button className='d-block mx-auto' type='submit'>Login</Button>
+            <Button className='d-block mt-4 mx-auto' type='submit'>Login</Button>
         </Form>
     );
 }

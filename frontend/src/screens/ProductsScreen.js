@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 /* Import Components */
 import ProductCard from '../components/ProductCard';
+import Loader from '../components/Loader';
 
 /* Import Actions */
 import { listProducts } from '../actions/productActions';
@@ -44,7 +45,7 @@ const ProductsScreen = () => {
                 // TODO: Improve loading message. Maybe add a little animation while loading?
                 // TODO: Improve error message. Maybe make both the loading / error message a component?
 
-                loading ? <p>Fetching amazing products...</p> // If loading, show loading message
+                loading ? <Loader message='Fetching amazing products...' /> // If loading, show loading message
 
                     : error ? <p>{error}</p> // If error, show error message
 
