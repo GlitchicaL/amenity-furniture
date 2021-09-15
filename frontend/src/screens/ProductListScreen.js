@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Loader from '../components/Loader';
 
-import { listProducts, deleteProduct } from '../actions/productActions';
+import { listProducts, deleteProduct, createProduct } from '../actions/productActions';
+
+import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 
 const ProductListScreen = ({ history, match }) => {
     const dispatch = useDispatch()
@@ -19,18 +21,26 @@ const ProductListScreen = ({ history, match }) => {
     const productDelete = useSelector(state => state.productDelete)
     const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete
 
-    useEffect(() => {
+    const productCreate = useSelector(state => state.productCreate)
+    const { loading: loadingCreate, error: errorCreate, success: successCreate, product: createdProduct } = productCreate
 
-        if (userInfo && userInfo.isAdmin) {
-            dispatch(listProducts())
-        } else {
+    useEffect(() => {
+        dispatch({ type: PRODUCT_CREATE_RESET })
+
+        if (!userInfo.isAdmin) {
             history.push('/login')
         }
 
-    }, [dispatch, history, userInfo, successDelete])
+        if (successCreate) {
+            history.push(`/admin/product/${createdProduct._id}/edit`)
+        } else {
+            dispatch(listProducts())
+        }
+
+    }, [dispatch, history, userInfo, successDelete, successCreate, createdProduct])
 
     const createProductHandler = (product) => {
-        // Create Product
+        dispatch(createProduct())
     }
 
     const deleteHandler = (id) => {
@@ -55,7 +65,10 @@ const ProductListScreen = ({ history, match }) => {
             </Row>
 
             {loadingDelete && <Loader message={'Deleting Product...'} />}
-            {errorDelete && <Alert variant='danger'>{error}</Alert>}
+            {errorDelete && <Alert variant='danger'>{errorDelete}</Alert>}
+
+            {loadingCreate && <Loader message={'Creating Product...'} />}
+            {errorCreate && <Alert variant='danger'>{errorCreate}</Alert>}
 
             <Row>
                 {loading ? (
