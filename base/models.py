@@ -12,7 +12,7 @@ class Product(models.Model):
     # Product details
     name = models.CharField(max_length=200, null=True, blank=True)
     image = models.ImageField(null=True, blank=True,
-                              default='/placeholder.jpg')
+                              default='/placeholder.png')
     brand = models.CharField(max_length=200, null=True, blank=True)
     category = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)

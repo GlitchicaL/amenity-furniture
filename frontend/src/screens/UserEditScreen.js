@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { Container, Form, Button, Spinner, Alert } from 'react-bootstrap';
+import { Container, Form, Button, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
+
+import Loader from '../components/Loader';
 
 import { getUserDetails, adminUpdateUser } from '../actions/userActions';
 import { USER_ADMIN_UPDATE_RESET, USER_DETAILS_RESET } from '../constants/userConstants';
@@ -28,7 +30,7 @@ const UserEditScreen = ({ match, history }) => {
     useEffect(() => {
 
         // If logged in user is not an admin, redirect
-        if (userInfo && !userInfo.isAdmin) {
+        if (!userInfo || !userInfo.isAdmin) {
             history.push('/login')
         }
 
@@ -68,11 +70,11 @@ const UserEditScreen = ({ match, history }) => {
 
             <Link to='/admin/userlist'><Button><i className="fas fa-chevron-left mx-1"></i>Go Back</Button></Link>
 
-            {loadingUpdate && <Spinner animation="border" />}
+            {loadingUpdate && <Loader />}
             {errorUpdate && <Alert variant='danger' className='my-4'>{errorUpdate}</Alert>}
 
             {loading ? (
-                <Spinner animation="border" />
+                <Loader message={"Loading User Details"} />
             ) : error ? (
                 <Alert variant='danger'>{error}</Alert>
             ) : (

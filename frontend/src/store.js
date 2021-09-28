@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { userLoginReducer, userRegisterReducer, userUpdateReducer, userListReducer, userDetailsReducer, userDeleteReducer, userAdminUpdateReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { orderCreateReducer, orderDetailsReducer, orderPayReducer, orderListMyReducer } from './reducers/orderReducers';
-import { productListReducer, productDetailsReducer, productDeleteReducer, productCreateReducer } from './reducers/productReducers';
+import { productListReducer, productDetailsReducer, productDeleteReducer, productCreateReducer, productUpdateReducer } from './reducers/productReducers';
 
 const reducer = combineReducers({
     userLogin: userLoginReducer,
@@ -30,6 +30,7 @@ const reducer = combineReducers({
 
     productDelete: productDeleteReducer,
     productCreate: productCreateReducer,
+    productUpdate: productUpdateReducer
 });
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ?

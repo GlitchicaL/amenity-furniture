@@ -3,6 +3,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Button, Table, Spinner, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
 
+import Loader from '../components/Loader';
+
 import { listUsers, deleteUser } from '../actions/userActions';
 
 const UserListScreen = ({ history }) => {
@@ -19,10 +21,10 @@ const UserListScreen = ({ history }) => {
 
     useEffect(() => {
 
-        if (userInfo && userInfo.isAdmin) {
-            dispatch(listUsers())
-        } else {
+        if (!userInfo || !userInfo.isAdmin) {
             history.push('/login')
+        } else {
+            dispatch(listUsers())
         }
 
     }, [dispatch, history, success, userInfo])
@@ -40,7 +42,7 @@ const UserListScreen = ({ history }) => {
             <h1 className='my-4'>Users</h1>
 
             {loading ? (
-                <Spinner animation="border" />
+                <Loader message={"Loading Users"} />
             ) : error ? (
                 <Alert variant='danger'>{error}</Alert>
             ) : (
